@@ -7,24 +7,30 @@ const style = StyleSheet.create({
         width: '100%'
     },
     body: {
+        flex: 1.5,
         padding: 30,
         alignItems: 'center',
         justifyContent: 'center',
     },
     container: {
         flex: 1,
-        justifyContent: 'center', // Memusatkan secara vertikal
-        backgroundColor: '#000',  // Warna latar belakang (opsional)
+        // justifyContent: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',  // Warna latar belakang (opsional)
     },
     row: {
         flexDirection: 'row',
         justifyContent: 'center',
+        alignContent: 'center',
         marginTop: 20
     },
     h3: {
-        fontSize: 25 ,
-        color: '#F78912',
-        fontWeight: 'bold'
+        fontSize: 26 ,
+        // color: '#F78912',
+        color: '#3D4357',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontFamily: 'Poppins-Bold'
     },
     containerUrl: {
         flexDirection: 'row',
@@ -39,6 +45,7 @@ const style = StyleSheet.create({
         marginStart: 10,
         flex: 1,
         color: '#fff',
+        fontFamily: 'Poppins-Medium'
     },
     widgetButtonUrl: {
         backgroundColor: '#F78912' ,
@@ -56,7 +63,7 @@ const style = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 18,
-        fontWeight: 'bold'
+        fontFamily: 'Poppins-SemiBold'
     },
 })
 

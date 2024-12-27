@@ -3,7 +3,8 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { RootStackParamList } from "../Router";
 import style from './style';
-// import Icon from '@react-native-vector-icons/FontAwesome6';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faLink , faBarcode, faQrcode } from '@fortawesome/free-solid-svg-icons'
 
 const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, 'HomeScreen'>) => {
     const [url, setUrl] = useState('');
@@ -21,40 +22,38 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
             <View style={style.body}>
                 <View style={style.row}>
                     <Image source={require('../../assets/images/logo.png')}  style={{  width: 90 , height: 80 , marginEnd: 20 }} />
-                    <Image source={require('../../assets/images/logo_nhsc.png')} style={{  width: 90 , height: 80}} />
+                    <Image source={require('../../assets/images/logo_nhsc.png')} style={{  width: 90 , height: 90}} />
                 </View>
-                <View style={{ alignItems: 'center', marginTop: 25 }}>
-                    <Text style={style.h3}>Griya Belajar Exam</Text>
-                    <Text style={{ ...style.h3 , marginTop: 10 }}>Lembaga NHSC</Text>
+                <View style={{ alignItems: 'center', marginTop: 30 }}>
+                    <Text style={style.h3}>Griya Belajar Exam Lembaga NHSC</Text>
                 </View>
                 <View style={{ ...style.containerUrl }}>
                     <View style={style.widgetButtonUrl}>
-                        <Text style={{ color: '#fff' , fontSize: 15 , fontWeight: 'bold' }}>https://</Text>
+                        <Text style={{ color: '#fff' , fontSize: 15 , fontFamily: 'Poppins-Medium' }}>https://</Text>
                     </View>
                     <TextInput 
                         style={style.input}
                         placeholder="Link Url"
                         value={url}
                         onChangeText={setUrl} 
-                        placeholderTextColor="white"
+                        placeholderTextColor="grey"
                     />
                 </View>
-                <View style={{ marginTop: 40 , width: '100%'}}>
+                <View style={{ marginTop: 20 , width: '100%'}}>
                     <TouchableOpacity style={style.button} onPress={() => handleToUrl()}>
-                        {/* <Icon name="link" size={24} color="white" iconStyle="solid" /> */}
-                        <Text style={style.buttonText}> Akses Url</Text>
+                        {/* <FontAwesomeIcon icon={faLink} size={24} color="white" style={{ marginEnd: 10 }} /> */}
+                        <Text style={style.buttonText}>AKSES URL</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ ...style.button, marginTop: 15 }}>
-                        {/* <Icon name="qrcode" size={24} color="white" iconStyle="sol
-                        id" /> */}
+                    <TouchableOpacity style={{ ...style.button, marginTop: 15 , backgroundColor: '#3D4357' }}>
+                        <FontAwesomeIcon icon={faQrcode} size={24} color="white" style={{ marginEnd: 5 }} />
                         <Text style={{ ...style.buttonText, marginStart: 5}}>SCAN QR-CODE</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={{ justifyContent: 'flex-end', flex: 0.2 , marginBottom: 70 }}>
+            <View style={{ justifyContent: 'flex-end', flex: 0.2 , marginBottom: 50 }}>
                 <View style={{ alignItems: 'center' }}>
-                <Text style={{ color: '#fff' }}>Aplikasi ini hanya di perlukan untuk <Text style={{  color: '#F78912' }}>griyabelajar.com</Text></Text>
-                <Text style={{ color: '#fff' }}>versi 1.7.3</Text>
+                    <Text style={{ color: '#000' , fontFamily: 'Poppins-Regular' , fontSize: 12 }}>Aplikasi ini hanya di perlukan untuk <Text style={{  color: '#F78912' }}>griyabelajar.com</Text></Text>
+                    <Text style={{ color: '#000' , fontFamily: 'Poppins-Medium' }}>versi 1.7.3</Text>
                 </View>
             </View>
         </View>
