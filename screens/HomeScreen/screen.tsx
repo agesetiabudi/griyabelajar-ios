@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { RootStackParamList } from "../Router";
 import style from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faLink , faBarcode, faQrcode } from '@fortawesome/free-solid-svg-icons'
+import { RootStackNavigatorParamsList } from '../../App';
 
-const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, 'HomeScreen'>) => {
+const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackNavigatorParamsList, 'HomeScreen'>) => {
     const [url, setUrl] = useState('');
 
     const handleToUrl = () => {
@@ -44,8 +44,8 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackParamList, '
                         {/* <FontAwesomeIcon icon={faLink} size={24} color="white" style={{ marginEnd: 10 }} /> */}
                         <Text style={style.buttonText}>AKSES URL</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ ...style.button, marginTop: 15 , backgroundColor: '#3D4357' }}>
-                        <FontAwesomeIcon icon={faQrcode} size={24} color="white" style={{ marginEnd: 5 }} />
+                    <TouchableOpacity style={{ ...style.button, marginTop: 15 , backgroundColor: '#3D4357' }} onPress={() => navigation.navigate('ScanScreen')}>
+                        <FontAwesomeIcon icon={faQrcode} size={24} color="white" style={{ marginEnd: 10 }} />
                         <Text style={{ ...style.buttonText, marginStart: 5}}>SCAN QR-CODE</Text>
                     </TouchableOpacity>
                 </View>
