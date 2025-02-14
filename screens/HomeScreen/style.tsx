@@ -44,7 +44,7 @@ const style = StyleSheet.create({
         borderRadius: 10,
         marginStart: 10,
         flex: 1,
-        color: '#fff',
+        color: '#000',
         fontFamily: 'Poppins-Medium'
     },
     widgetButtonUrl: {

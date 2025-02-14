@@ -12,8 +12,8 @@ const HomeScreen = ({ navigation }: NativeStackScreenProps<RootStackNavigatorPar
     const handleToUrl = () => {
         let cek = url.toLocaleLowerCase().includes('griyabelajar');
         if(cek){
-        //   router.push(`/explore?link=${encodeURIComponent(url)}`)
-          setUrl('')
+            navigation.navigate('ExploreScreen' ,{ url: url })
+          setUrl(url)
         }
       }
 
